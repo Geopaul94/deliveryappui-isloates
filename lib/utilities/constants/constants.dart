@@ -52,7 +52,7 @@ const h100 = SizedBox(height: 100);
 
 const w10 = SizedBox(width: 10);
 
-const w20 = SizedBox(width: 20);
+const w20 = SizedBox(width: 20);const w15 = SizedBox(width: 15);
 
 const w30 = SizedBox(width: 30);
 

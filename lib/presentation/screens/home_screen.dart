@@ -82,12 +82,29 @@ class HomeScreen extends StatelessWidget {
                 CustomText(
                   text: 'See all',
                   fontWeight: FontWeight.w700,
-                  color: Color.fromRGBO(6,194,94, 1),
+                  color: Color.fromRGBO(6, 194, 94, 1),
                   fontSize: 16,
                 ),
               ],
             ),
-          )
+          ),
+          h10,
+          const IcecreamMithas(),
+          h20,
+          const IcecreamMithas(),
+          h10,
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: CustomText(
+              text: 'Craze deals',
+              color: textcolor,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          h10,
+          const CustomefavouriteExplore(),
+          h100,
         ],
       ))),
     );
@@ -169,6 +186,166 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomefavouriteExplore extends StatelessWidget {
+  const CustomefavouriteExplore({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 900,
+      height: 170,
+      child: CenteredPageView.builder(
+        itemCount: 2,
+        controller: PageController(viewportFraction: .85),
+        showIndicator: false,
+        itemBuilder: (context, index) {
+          return Container(
+            width: MediaQuery.of(context).size.width,
+            margin: const EdgeInsets.fromLTRB(
+              20,
+              0,
+              0,
+              0,
+            ),
+            child: Container(
+              width: 900,
+              height: 170,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Color.fromRGBO(38, 38, 38, 1)),
+              child: Stack(
+                children: [
+                  Positioned(
+                      right: 0,
+                      bottom: -5,
+                      child: Image.asset(
+                        'assets/vegPhoto.png',
+                        height: 170,
+                      )),
+                  const Positioned(
+                    left: 20,
+                    top: 30,
+                    child: CustomText(
+                      text: 'Customer favourite \ntop supermarkets',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 21,
+                      color: Color.fromRGBO(242, 242, 242, 1),
+                      fontFamily: 'Poppins',
+                    ),
+                  ),
+                  const Positioned(
+                    left: 20,
+                    top: 100,
+                    child: Row(
+                      children: [
+                        CustomText(
+                          text: 'Explore',
+                          color: Color.fromRGBO(234, 126, 0, 1),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          color: Color.fromRGBO(234, 126, 0, 1),
+                          size: 18,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class IcecreamMithas extends StatelessWidget {
+  const IcecreamMithas({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 88,
+      width: 400,
+      child: CenteredPageView.builder(
+        itemCount: 2,
+        controller: PageController(viewportFraction: 0.66),
+        showIndicator: false,
+        itemBuilder: (context, index) {
+          return Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.fromLTRB(
+                20,
+                0,
+                0,
+                0,
+              ),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: Image.asset(
+                      'assets/TLD6iCOlyb0.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  w15,
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Mithas Bhandar',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                        color: textcolor,
+                      ),
+                      CustomText(
+                        text: 'Sweets, North Indian',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: textcolor,
+                      ),
+                      CustomText(
+                        text: '(store location) | 6.4 kms',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: textcolor,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 14,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          CustomText(
+                            text: '4.1 | 45 mins',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: textcolor,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ));
+        },
       ),
     );
   }
