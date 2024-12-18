@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moch_api/presentation/screens/notificaton_screen.dart';
 import 'package:moch_api/presentation/screens/widgets/custome_favourite_explore.dart';
 import 'package:moch_api/presentation/screens/widgets/custometext.dart';
 import 'package:moch_api/presentation/screens/widgets/discount_card.dart';
 import 'package:moch_api/presentation/screens/widgets/freshbakers.dart';
 import 'package:moch_api/presentation/screens/widgets/gridview_product.dart';
+import 'package:moch_api/presentation/screens/widgets/heading1.dart';
 import 'package:moch_api/presentation/screens/widgets/icecreammithas.dart';
+import 'package:moch_api/presentation/screens/widgets/nearbystore.dart';
 import 'package:moch_api/presentation/screens/widgets/referandearn.dart';
+import 'package:moch_api/presentation/screens/widgets/searchbox.dart';
 import 'package:moch_api/utilities/constants/constants.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,9 +25,9 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           h20,
-          heading(),
+          const HeadingABC(),
           h20,
-          searchbox(context),
+          const SearchBox(),
           h20,
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
@@ -114,27 +115,11 @@ class HomeScreen extends StatelessWidget {
               children: [
                 const ReferandEarn(),
                 h10,
-                const Row(
-                  children: [
-                    CustomText(
-                      text: 'Nearby stores',
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(50, 50, 50, 1),
-                      fontSize: 22,
-                    ),
-                    Spacer(),
-                    CustomText(
-                      text: 'See all',
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(6, 194, 94, 1),
-                      fontSize: 16,
-                    ),
-                  ],
-                ),
+                const nearbystores(),
                 const freshlyBaker(),
                 h20,
                 const freshlyBaker(),
-                h20,
+                h40,
                 Container(
                   height: 50,
                   width: 240,
@@ -154,90 +139,9 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          h100,
+          h50,
         ],
       ))),
     );
   }
-
-  Padding searchbox(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: searchboxcolor,
-            ),
-            height: .05.sh,
-            width: .65.sw,
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Search for products/stores',
-                    selectionColor: Color.fromRGBO(150, 150, 150, 1),
-                    style: TextStyle(fontWeight: FontWeight.w500),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.search,
-                    color: maincolor,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          w10,
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context, CupertinoPageRoute(builder: (_) {
-                return NotificatonScreen();
-              }));
-            },
-            child: Image.asset(
-              'assets/notification.png',
-              width: 30,
-              height: 30,
-            ),
-          ),
-          w10,
-          Container(width: 10),
-          Image.asset(
-            'assets/Tag.png',
-            width: 30,
-            height: 30,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Padding heading() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.location_pin,
-            color: maincolor,
-          ),
-          const Text(
-            'ABCD, New Delhi',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-          ),
-          Transform.rotate(
-            angle: 3.14 / -2,
-            child: const Icon(
-              CupertinoIcons.back,
-              color: maincolor,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
-

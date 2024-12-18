@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,62 +6,52 @@ import 'package:moch_api/presentation/screens/account_screen.dart';
 import 'package:moch_api/presentation/screens/cart_screen.dart';
 import 'package:moch_api/presentation/screens/home_screen.dart';
 import 'package:moch_api/presentation/screens/my_order.dart';
+import 'package:moch_api/utilities/constants/bottomnavenm.dart';
 
-class BottonavigationScreen extends StatefulWidget {
+class BottonavigationScreen extends StatelessWidget {
   const BottonavigationScreen({super.key});
 
   @override
-  State<BottonavigationScreen> createState() => _BottonavigationScreenState();
-}
-
-class _BottonavigationScreenState extends State<BottonavigationScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
+      bottomNavigationBar:
+          BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
         builder: (context, state) {
           return BottomNavigationBar(
             currentIndex: state.index,
-            unselectedItemColor: Color.fromRGBO(125, 125, 125, 1), // Set unselected text and icon color to black
+            unselectedItemColor: const Color.fromRGBO(125, 125, 125, 1),
             selectedIconTheme: const IconThemeData(
-              color: Colors.green, // Set selected icon color to green
+              color: Colors.green,
             ),
-            selectedItemColor:  Color.fromRGBO(125, 125, 125, 1), // Color applies to selected icon only
+            selectedItemColor: const Color.fromRGBO(125, 125, 125, 1),
             selectedLabelStyle: const TextStyle(
-               fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontSize: 14,
-              
-              
-                fontFamily: 'Quicksand',
-              color: Color.fromRGBO(125, 125, 125, 1), // Ensure selected text stays black
+              fontFamily: 'Quicksand',
+              color: Color.fromRGBO(125, 125, 125, 1),
             ),
             unselectedLabelStyle: const TextStyle(
-              color: Color.fromRGBO(125, 125, 125, 1), 
+              color: Color.fromRGBO(125, 125, 125, 1),
               fontWeight: FontWeight.w500,
               fontSize: 14,
-              
-              
-                fontFamily: 'Quicksand',
-              
-              
-              // Ensure unselected text stays black
+              fontFamily: 'Quicksand',
             ),
-            showUnselectedLabels: true, // Always show text for all items
+            showUnselectedLabels: true,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_work_outlined),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.card_travel),
+                icon: Icon(CupertinoIcons.cart),
                 label: 'Cart',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.online_prediction_rounded),
+                icon: Icon(CupertinoIcons.bag_badge_plus),
                 label: 'My orders',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.people),
+                icon: Icon(Icons.people_outline),
                 label: 'Account',
               ),
             ],
