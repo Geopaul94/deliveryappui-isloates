@@ -105,31 +105,48 @@ class HomeScreen extends StatelessWidget {
           h10,
           const CustomefavouriteExplore(),
           h30,
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal:20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                ReferandEarn(),
-          
-          h10,
-          
-                Row(
-            children: [
-              CustomText(
-                text: 'Nearby stores',
-                fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(50, 50, 50, 1),
-                fontSize: 22,
-              ),
-              Spacer(),
-              CustomText(
-                text: 'See all',
-                fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(6, 194, 94, 1),
-                fontSize: 16,
-              ),
-            ],
-          ),
+                const ReferandEarn(),
+                h10,
+                const Row(
+                  children: [
+                    CustomText(
+                      text: 'Nearby stores',
+                      fontWeight: FontWeight.w700,
+                      color: Color.fromRGBO(50, 50, 50, 1),
+                      fontSize: 22,
+                    ),
+                    Spacer(),
+                    CustomText(
+                      text: 'See all',
+                      fontWeight: FontWeight.w700,
+                      color: Color.fromRGBO(6, 194, 94, 1),
+                      fontSize: 16,
+                    ),
+                  ],
+                ),
+                const freshlyBaker(),
+                h20,
+                const freshlyBaker(),
+                h20,
+                Container(
+                  height: 50,
+                  width: 240,
+                  child: Center(
+                    child: const CustomText(
+                      text: 'View all stores',
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,color: Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: 16,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: maincolor,
+                      borderRadius: BorderRadius.circular(10)),
+                )
               ],
             ),
           ),
@@ -220,6 +237,135 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class freshlyBaker extends StatelessWidget {
+  const freshlyBaker({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 120,
+      width: 383,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              'assets/lastphoto.png',
+              height: 85,
+              width: 75,
+              fit: BoxFit.cover,
+            ),
+          ),
+          w15,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const CustomText(
+                          text: 'Freshly Baker',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                          color: textcolor,
+                        ),
+                        const CustomText(
+                          text: 'Sweets, North Indian',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          color: textcolor,
+                        ),
+                        const CustomText(
+                          text: 'Site No - 1 | 6.4 kms',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: textcolor,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3),
+                            color: const Color.fromRGBO(172, 171, 171, 1),
+                          ),
+                          height: 18,
+                          width: 48,
+                          child: const Center(
+                            child: CustomText(
+                              text: 'Top Store ',
+                              color: textcolor,
+                              fontSize: 8,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    const Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              size: 14,
+                              color: textcolor,
+                            ),
+                            w10,
+                            CustomText(
+                                text: '4.1',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: textcolor),
+                          ],
+                        ),
+                        CustomText(
+                          text: '45 mins',
+                          color: Color.fromRGBO(234, 126, 0, 1),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                const Divider(),
+                Row(
+                  children: [
+                    Image.asset('assets/%.png'),
+                    w5,
+                    const CustomText(
+                      text: 'Upto 10% OFF',
+                      color: textcolor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 11.5,
+                    ),
+                    w10,
+                    Image.asset('assets/box.png'),
+                    w5,
+                    const CustomText(
+                      text: '3400+ items available',
+                      color: textcolor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 11.5,
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class ReferandEarn extends StatelessWidget {
   const ReferandEarn({
     super.key,
@@ -236,7 +382,9 @@ class ReferandEarn extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const Positioned(top: 20,left: 32,
+          const Positioned(
+            top: 20,
+            left: 32,
             child: CustomText(
               text: 'Refer & Earn',
               fontSize: 20,
@@ -244,7 +392,9 @@ class ReferandEarn extends StatelessWidget {
               color: Color.fromRGBO(242, 242, 242, 1),
             ),
           ),
-          Positioned(top: 50,left: 12,
+          Positioned(
+            top: 50,
+            left: 12,
             child: Row(
               children: [
                 const CustomText(
@@ -253,28 +403,24 @@ class ReferandEarn extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: Color.fromRGBO(242, 242, 242, 1),
                 ),
-    const CustomText(
+                const CustomText(
                   text: '15% off',
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color: Color.fromRGBO(242, 242, 242, 1),
-    
-    
-    
-    
-    
-    
-    
-                ),w10,
-                Container(height: 15,width: 15,
+                ),
+                w10,
+                Container(
+                  height: 15,
+                  width: 15,
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
-             
                   child: const Center(
                     child: Icon(
-                      Icons.arrow_forward,size: 12,
+                      Icons.arrow_forward,
+                      size: 12,
                       color: Color.fromRGBO(41, 209, 119, 1),
                     ),
                   ),
@@ -282,10 +428,8 @@ class ReferandEarn extends StatelessWidget {
               ],
             ),
           ),
-    
-    
-          Positioned( right: 15,bottom: 10,
-            child: Image.asset('assets/giftbox.png'))
+          Positioned(
+              right: 15, bottom: 10, child: Image.asset('assets/giftbox.png'))
         ],
       ),
     );
@@ -333,7 +477,8 @@ class CustomefavouriteExplore extends StatelessWidget {
                   const Positioned(
                     left: 30,
                     top: 30,
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
                           text: 'Customer favourite \ntop supermarkets',
@@ -341,26 +486,26 @@ class CustomefavouriteExplore extends StatelessWidget {
                           fontSize: 22,
                           color: Color.fromRGBO(242, 242, 242, 1),
                           fontFamily: 'Poppins',
-                        ),h15,
+                        ),
+                        h15,
                         Row(
-                      children: [
-                        CustomText(
-                          text: 'Explore',
-                          color: Color.fromRGBO(234, 126, 0, 1),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                          children: [
+                            CustomText(
+                              text: 'Explore',
+                              color: Color.fromRGBO(234, 126, 0, 1),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: Color.fromRGBO(234, 126, 0, 1),
+                              size: 18,
+                            ),
+                          ],
                         ),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: Color.fromRGBO(234, 126, 0, 1),
-                          size: 18,
-                        ),
-                      ],
-                    ),
                       ],
                     ),
                   ),
-                 
                 ],
               ),
             ),
