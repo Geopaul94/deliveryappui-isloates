@@ -1,0 +1,1 @@
+enum NavbarItem { HomeScreen, CartScreen,MyOrder_Screen, AccountScreen }
