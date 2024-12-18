@@ -104,6 +104,35 @@ class HomeScreen extends StatelessWidget {
           ),
           h10,
           const CustomefavouriteExplore(),
+          h30,
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal:20),
+            child: Column(
+              children: [
+                ReferandEarn(),
+          
+          h10,
+          
+                Row(
+            children: [
+              CustomText(
+                text: 'Nearby stores',
+                fontWeight: FontWeight.w700,
+                color: Color.fromRGBO(50, 50, 50, 1),
+                fontSize: 22,
+              ),
+              Spacer(),
+              CustomText(
+                text: 'See all',
+                fontWeight: FontWeight.w700,
+                color: Color.fromRGBO(6, 194, 94, 1),
+                fontSize: 16,
+              ),
+            ],
+          ),
+              ],
+            ),
+          ),
           h100,
         ],
       ))),
@@ -191,6 +220,78 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class ReferandEarn extends StatelessWidget {
+  const ReferandEarn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: 380,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: const Color.fromRGBO(41, 209, 119, 1),
+      ),
+      child: Stack(
+        children: [
+          const Positioned(top: 20,left: 32,
+            child: CustomText(
+              text: 'Refer & Earn',
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+              color: Color.fromRGBO(242, 242, 242, 1),
+            ),
+          ),
+          Positioned(top: 50,left: 12,
+            child: Row(
+              children: [
+                const CustomText(
+                  text: 'Invite your friends & earn ',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromRGBO(242, 242, 242, 1),
+                ),
+    const CustomText(
+                  text: '15% off',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromRGBO(242, 242, 242, 1),
+    
+    
+    
+    
+    
+    
+    
+                ),w10,
+                Container(height: 15,width: 15,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+             
+                  child: const Center(
+                    child: Icon(
+                      Icons.arrow_forward,size: 12,
+                      color: Color.fromRGBO(41, 209, 119, 1),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+    
+    
+          Positioned( right: 15,bottom: 10,
+            child: Image.asset('assets/giftbox.png'))
+        ],
+      ),
+    );
+  }
+}
+
 class CustomefavouriteExplore extends StatelessWidget {
   const CustomefavouriteExplore({
     super.key,
@@ -203,7 +304,7 @@ class CustomefavouriteExplore extends StatelessWidget {
       height: 170,
       child: CenteredPageView.builder(
         itemCount: 2,
-        controller: PageController(viewportFraction: .85),
+        controller: PageController(viewportFraction: .88),
         showIndicator: false,
         itemBuilder: (context, index) {
           return Container(
@@ -223,27 +324,25 @@ class CustomefavouriteExplore extends StatelessWidget {
               child: Stack(
                 children: [
                   Positioned(
-                      right: 0,
+                      right: -5,
                       bottom: -5,
                       child: Image.asset(
                         'assets/vegPhoto.png',
                         height: 170,
                       )),
                   const Positioned(
-                    left: 20,
+                    left: 30,
                     top: 30,
-                    child: CustomText(
-                      text: 'Customer favourite \ntop supermarkets',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 21,
-                      color: Color.fromRGBO(242, 242, 242, 1),
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  const Positioned(
-                    left: 20,
-                    top: 100,
-                    child: Row(
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomText(
+                          text: 'Customer favourite \ntop supermarkets',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 22,
+                          color: Color.fromRGBO(242, 242, 242, 1),
+                          fontFamily: 'Poppins',
+                        ),h15,
+                        Row(
                       children: [
                         CustomText(
                           text: 'Explore',
@@ -258,7 +357,10 @@ class CustomefavouriteExplore extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                      ],
+                    ),
+                  ),
+                 
                 ],
               ),
             ),
