@@ -6,31 +6,6 @@ import 'dart:isolate';
 
 import 'dart:developer' as developer;
 
-// Future<List<NotificationModel>> fetchNotification() async {
-//   final response = await http.get(Uri.parse(notificationapi));
-
-//   switch (response.statusCode) {
-//     case 200:
-//       final Map<String, dynamic> jsonResponse = json.decode(response.body);
-//       final List<dynamic> data = jsonResponse['data'];
-//       return data
-//           .map((notification) => NotificationModel.fromJson(notification))
-//           .toList();
-//     case 400:
-//       throw Exception('Bad request');
-//     case 401:
-//       throw Exception('Unauthorized');
-//     case 403:
-//       throw Exception('Forbidden');
-//     case 404:
-//       throw Exception('Not found');
-//     case 500:
-//       throw Exception('Internal server error');
-//     default:
-//       throw Exception('Failed to load notifications');
-//   }
-// }
-
 const String notificationapi =
     'https://raw.githubusercontent.com/shabeersha/test-api/main/test-notifications.json';
 

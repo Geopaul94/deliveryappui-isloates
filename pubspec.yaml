@@ -21,6 +21,8 @@ dependencies:
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   carousel_nerdzlab: ^1.0.1
+  lottie: ^3.2.0
+  widget_and_text_animator: ^1.1.5
 
 dev_dependencies:
   flutter_test:

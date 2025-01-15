@@ -1,6 +1,4 @@
-import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 
 class NotificationModel {
   final String image;
